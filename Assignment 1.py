@@ -45,3 +45,41 @@ plt.title("Mars vs. Earth Temperature Comparison")
 plt.legend()
 plt.grid(True, linestyle="--")
 plt.show()
+
+# Boxplot for Mars Max Temperature
+plt.boxplot(mars_df["Max_Temp"], labels = ["Mars Max"])
+plt.title("Mars Maximum Temperature Distribution")
+plt.ylabel("Temperature (°C)")
+plt.grid(True, linestyle="--")
+plt.show()
+
+# Boxplot for Mars Min Temperature
+plt.boxplot(mars_df["Min_Temp"], labels = ["Mars Min"])
+plt.title("Mars Minimum Temperature Distribution")
+plt.ylabel("Temperature (°C)")
+plt.grid(True, linestyle="--")
+plt.show()
+
+# Boxplots for Earth's Temperatures
+plt.boxplot([earth_df["Min_Temp"], earth_df["Max_Temp"]], labels = ["Earth Min", "Earth Max"])
+plt.title("Earth Temperature Distribution")
+plt.ylabel("Temperature (°C)")
+plt.grid(True, linestyle="--")
+plt.show()
+
+mars_mean = mars_df[["Min_Temp", "Max_Temp"]].mean()
+print("\nMars Temperature Mean:")
+print(mars_mean)
+
+earth_mean = earth_df[["Min_Temp", "Max_Temp"]].mean()
+print("\nEarth Temperature Mean:")
+print(earth_mean)
+
+# Calculate and Print Standard Deviation for Temperatures
+mars_std = mars_df[["Min_Temp", "Max_Temp"]].std()
+print("\nMars Temperature Std Dev:")
+print(mars_std)
+
+earth_std = earth_df[["Min_Temp", "Max_Temp"]].std()
+print("\nEarth Temperature Std Dev:")
+print(earth_std)
